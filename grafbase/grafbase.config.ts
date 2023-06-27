@@ -1,6 +1,6 @@
 import { g, config, auth } from '@grafbase/sdk';
 
-// @ts-ignore
+// @ts-ignore expect error
 const User = g.model('User', {
   name: g.string().length({ min: 2, max: 100 }),
   email: g.string().unique(),
@@ -13,7 +13,7 @@ const User = g.model('User', {
   rules.public().read()
 })
 
-// @ts-ignore
+// @ts-ignore expect error
 const Project = g.model('Project', {
   title: g.string().length({ min: 3 }),
   description: g.string(), 
