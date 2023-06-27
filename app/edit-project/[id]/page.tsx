@@ -1,0 +1,30 @@
+import { ProjectInterface } from "@/common.types";
+import Modal from "@/components/Modal";
+import ProjectForm from "@/components/ProjectForm";
+import { getProjectDetails } from "@/lib/actions";
+import { getSession } from "@/lib/session";
+import { redirect } from "next/navigation";
+import { type } from "os";
+
+type Props = {
+  params: {
+    id: string;
+  };
+};
+
+const EditProject = async ({ params: { id } }: Props) => {
+  const session = await getSession();
+  if (!session?.user) redirect("/");
+  const result = (await getProjectDetails(id)) as {
+    project?: ProjectInterface;
+  };
+  return (
+    <Modal>
+      <h3 className="modal-head-text">Edit Project</h3>
+
+      <ProjectForm type="edit" session={session} project={result?.project} />
+    </Modal>
+  );
+};
+
+export default EditProject;
