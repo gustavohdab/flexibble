@@ -4,7 +4,7 @@ Flexibble é um clone do Dribbble feito com Next.js, React, TypeScript, Tailwind
 
 ## 📌 Links
 
-Você pode acessar o projeto em produção [aqui](https://flexibble-gustavohdab.vercel.app/).
+Você pode acessar o projeto em produção clicando [aqui](https://flexibble-gustavohdab.vercel.app/).
 
 <br>
 
